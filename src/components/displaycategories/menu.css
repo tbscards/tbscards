@@ -1,0 +1,34 @@
+.menu {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: black;
+  text-align: left;
+  padding-top: 2rem;
+  padding-left: 2.5rem;
+  border: 1px solid grey;
+  min-width: 250px;
+}
+
+.open {
+  transform: translateX(0);
+  transition: transform 0.1s ease-in-out;
+}
+
+.closed {
+  transform: translateX(-100%);
+  transition: transform 0.1s ease-in-out;
+}
+
+.menu-link {
+  margin: 15px 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 415px) {
+  .menu {
+    min-width: 200px;
+  }
+}

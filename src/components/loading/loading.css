@@ -1,0 +1,52 @@
+  
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    max-height: 1600px;
+    margin: auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    border: none;
+    padding:15vh;
+  }
+  
+  p{
+      width: 100%;
+      font-size: large;
+  }
+
+  h3{
+      padding:5vh;
+  }
+
+  .box{
+    background-color:white;
+    height:8vh;
+    width:8vh;
+    border-radius: 25%;
+  }
+
+  .aboutButton{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: none;
+    font-family: 'value';
+    font-size: large;
+  }
+  
+  /* Mobile Landscape Screen Sizes
+  @media only screen and (min-width: 480px)  {
+
+  }
+  /* Desktop screen Sizes */
+  /* @media only screen and (min-width: 768px) {
+
+  }  */
+

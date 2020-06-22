@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Linotype - ITC Honda";
+  src: local("Linotype - ITC Honda"),
+    url("./fonts/Linotype - ITC Honda.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "value";
+  src: local("value"), url("./fonts/value-bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "value";
+  src: local("value"), url("./fonts/value-regular.ttf") format("truetype");
+}
+
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+}
+/* inherit border-box on all elements in the universe and before and after
+   */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "value";
+  margin: 0;
+}
+
+.exposition-label {
+  max-width: 700px;
+  margin: auto;
+  padding: 10px;
+}

@@ -1,0 +1,52 @@
+.wrapperAbout {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 1600px;
+  margin: auto;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: left;
+  border: 7px solid #fff;
+}
+
+.wrapperAbout h3,
+.wrapperAbout h2,
+.wrapperAbout p {
+  width: 100%;
+  padding: 3%;
+  font-size: large;
+}
+
+.wrapperAbout h2 {
+  font-size: 36px;
+}
+
+.wrapperAbout a {
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+  margin: 4%;
+}
+
+.about-categories-list {
+  width: 700px;
+}
+
+.aboutContinueButton {
+  background-color: white;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  border: none;
+  font-size: 18px;
+  font-family: "value";
+  cursor: pointer;
+}
+
+.made-by-tbs {
+  text-align: center;
+}

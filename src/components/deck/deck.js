@@ -1,0 +1,124 @@
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { connect } from "react-redux";
+
+import {
+  GET_CARDS_FROM_HAND,
+  REMOVE_CARD_FROM_HAND,
+} from "../../store/actions/actionTypes.js";
+
+import Card from "../CardHand/CardHand.js";
+import ReactCardCarousel from "react-card-carousel";
+import BurgerButton from "../displaycategories/burger.js";
+
+import "./deck.css";
+
+const Deck = (props) => {
+  // Carousel Reference
+  const [carousel, setCarousel] = useState([]);
+
+  // React Router Query Params
+  let { search } = useLocation();
+  const query = new URLSearchParams(search);
+  const categoryField = query.get("category");
+
+  const getDeck = (field) => {
+    switch (field) {
+      case "principles":
+        return props.principles;
+      case "mediums":
+        return props.mediums;
+      case "forms":
+        return props.forms;
+      case "questions":
+        return props.questions;
+      case "tactics":
+        return props.tactics;
+      case "themes":
+        return props.themes;
+      default:
+        return props.principles;
+    }
+  };
+
+  const cards = getDeck(categoryField);
+
+  const getIndex = () => {
+    props.onUpdateHand(cards[carousel.getCurrentIndex()]);
+  };
+
+  const getRandom = () => {
+    carousel.goTo(Math.floor(Math.random() * cards.length));
+  };
+
+  const removeFromHand = () => {
+    props.onRemoveFromHand(props.principles[carousel.getCurrentIndex()].id);
+  };
+
+  // Map data into components
+  const tar = cards.map((el) => {
+    const selected = props.hand.some((ha) => {
+      return ha.id === el.id;
+    });
+
+    return (
+      <Card
+        key={el.id}
+        title={el.title}
+        body={el.content}
+        category={el.category}
+        selected={selected}
+      />
+    );
+  });
+
+  return (
+    <div className="deckWrapper">
+      <h1 className="deck-label">Choose your cards</h1>
+      <div className="Carousel">
+        <ReactCardCarousel
+          spread="wide"
+          ref={(Carousel) => setCarousel(Carousel)}
+        >
+          {tar}
+        </ReactCardCarousel>
+      </div>
+      <BurgerButton />
+      <div className="deckButtons">
+        <div onClick={getRandom}>Random</div>
+        <div onClick={getIndex}>Select</div>
+        <div onClick={removeFromHand}>Remove</div>
+      </div>
+    </div>
+  );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    principles: state.root.principles,
+    mediums: state.root.mediums,
+    forms: state.root.forms,
+    questions: state.root.questions,
+    tactics: state.root.tactics,
+    themes: state.root.themes,
+    hand: state.root.hand,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onUpdateHand: (newCard) => {
+      dispatch({
+        type: GET_CARDS_FROM_HAND,
+        card: newCard,
+      });
+    },
+    onRemoveFromHand: (myCardID) => {
+      dispatch({
+        type: REMOVE_CARD_FROM_HAND,
+        cardID: myCardID,
+      });
+    },
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Deck);

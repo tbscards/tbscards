@@ -1,0 +1,50 @@
+.wrapperHand {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: auto;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  border: 7px solid #fff;
+  position: relative;
+}
+
+.cards-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-hand-wrapper {
+  position: relative;
+  margin: 15px;
+}
+
+.hand-title {
+  width: 100%;
+  text-align: center;
+}
+
+.empty-hand-label {
+  text-align: center;
+  color: gray;
+  border: 1px solid gray;
+  padding: 40px;
+  width: 80%;
+}
+
+.delete-icon {
+  display: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

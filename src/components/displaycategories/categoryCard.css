@@ -1,0 +1,54 @@
+.CategoryCard {
+  border: 10px solid white;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 200px;
+  color: black;
+  font-family: "value";
+  margin: 5px;
+}
+
+.theme {
+  background-color: #f0e0ed;
+}
+
+.form {
+  background-color: #ca9598;
+}
+
+.medium {
+  background-color: #f6d2b0;
+}
+
+.principle {
+  background-color: #d2ecdb;
+}
+
+.question {
+  background-color: #c1daf0;
+}
+
+.tactic {
+  background-color: #f6eca4;
+}
+
+.CategoryCard:hover {
+  cursor: pointer;
+}
+
+.CategoryCard-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  font-size: 23px;
+}
+
+.contents {
+  font-size: 12px;
+  padding: 7px 0;
+}

@@ -1,0 +1,68 @@
+.CardMain {
+  height: 60vh;
+  width: 35vh;
+  padding: 6%;
+  box-sizing: border-box;
+  border-radius: 3px;
+  background: #fff;
+  color: #000;
+  border: 10px solid #c8a04a;
+  display: flex;
+  flex-direction: column;
+  font-family: "Linotype - ITC Honda";
+  transition: border 500ms ease-out;
+}
+
+.CardMainCategory,
+.CardMainTitle,
+.CardMainBody {
+  color: #000;
+  width: 100%;
+  padding: 0;
+}
+
+.CardMainCategory {
+  font-size: 18px;
+  text-align: left;
+}
+.CardMainTitle {
+  font-size: 42px;
+  word-break: break-word;
+  flex: 4;
+}
+
+.CardMainBody {
+  font-size: 16px;
+}
+
+.selected {
+  border-color: red;
+}
+
+/* Mobile Landscape Screen Sizes  */
+@media only screen and (min-width: 480px) {
+  .CardMainCategory {
+    font-size: 20px;
+  }
+
+  .CardMainTitle {
+    font-size: 54px;
+    word-wrap: normal;
+  }
+
+  .CardMainBody {
+    font-size: 24px;
+  }
+}
+/* Desktop screen Sizes  */
+@media only screen and (min-width: 768px) {
+  .CardMainCategory {
+    font-size: 28px;
+  }
+  .CardMainTitle {
+    font-size: 60px;
+  }
+  .CardMainBody {
+    font-size: 24px;
+  }
+}

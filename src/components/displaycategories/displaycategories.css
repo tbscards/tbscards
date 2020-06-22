@@ -1,0 +1,115 @@
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+}
+/* inherit border-box on all elements in the universe and before and after
+   */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: Arial, Geneva, sans-serif;
+  background-color: black;
+}
+
+h1 {
+  font-size: 54px;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+p {
+  font-size: 16px;
+}
+
+.burger {
+  width: 60px;
+  height: 60px;
+  overflow: "hidden";
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  display: inline-block;
+  margin: 1px;
+  border-radius: 25px;
+}
+
+.buttonnew {
+  background-color: white;
+  width: 200px;
+  height: 30px;
+  text-align: center;
+  border: none;
+}
+
+.display-categories-wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 1600px;
+  margin: auto;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 7px solid #fff;
+  padding: 0;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.display-categories-title {
+  text-align: center;
+  width: 100%;
+}
+
+.categories-explain {
+  padding: 33px;
+}
+
+.display-categories-wrapper .content-wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 1600px;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.content-explain {
+  text-align: center;
+  font-family: "value";
+  font-size: 17px;
+}
+
+h1,
+h2,
+input,
+p {
+  margin: 1%;
+  padding: 2%;
+}
+
+@media only screen and (max-width: 320px) {
+  .display-categories-title {
+    font-size: 35px;
+  }
+}
