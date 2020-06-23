@@ -48,3 +48,12 @@
   top: 0;
   right: 0;
 }
+
+@media only screen and (max-width: 480px) {
+  .hand-title {
+    font-size: 36px;
+  }
+  h3{
+    font-size: 14px;
+  }
+}

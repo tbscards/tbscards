@@ -37,6 +37,7 @@ const DisplayCategories = (props) => {
 
       <BurgerButton />
       <div className="content-wrapper">
+  
         {principleKeys.map((principleKey, idx) => {
           return (
             <CategoryCard
@@ -49,7 +50,7 @@ const DisplayCategories = (props) => {
             />
           );
         })}
-        <h3>Made with ♡ by The Black School</h3>
+        <h3 className="made-by-tbs">Made with ♡ by The Black School</h3>
       </div>
     </div>
   );
