@@ -76,10 +76,12 @@ p {
 .display-categories-title {
   text-align: center;
   width: 100%;
+  padding: 0;
 }
 
 .categories-explain {
   padding: 33px;
+  text-align: center;
 }
 
 .display-categories-wrapper .content-wrapper {

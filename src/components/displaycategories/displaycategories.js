@@ -32,7 +32,7 @@ const DisplayCategories = (props) => {
       <div className="exposition-label categories-explain">
         The cards are divided into sections. Determine goal based on your
         answers to the questions and choose one (at most two) cards from each
-        category
+        category.
       </div>
 
       <BurgerButton />

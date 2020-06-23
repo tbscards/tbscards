@@ -2,7 +2,6 @@ import React from "react";
 import "./loading.css";
 import { motion } from "framer-motion";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default function Loading() {
   return (

@@ -7,37 +7,39 @@ const Menu = ({ open }) => {
 
   return (
     <div className={`menu ${open ? "open" : "closed"}`}>
-      <div
-        className="menu-link"
-        onClick={() => {
-          history.push("/displaycategories");
-        }}
-      >
-        CATEGORIES
-      </div>
-      <div
-        className="menu-link"
-        onClick={() => {
-          history.push("/hand");
-        }}
-      >
-        HAND
-      </div>
-      <div
-        className="menu-link"
-        onClick={() => {
-          history.push("/prompts");
-        }}
-      >
-        QUESTIONS
-      </div>
-      <div
-        className="menu-link"
-        onClick={() => {
-          history.push("/about");
-        }}
-      >
-        ABOUT
+      <div className="menu-list">
+        <div
+          className="menu-link"
+          onClick={() => {
+            history.push("/displaycategories");
+          }}
+        >
+          CATEGORIES
+        </div>
+        <div
+          className="menu-link"
+          onClick={() => {
+            history.push("/hand");
+          }}
+        >
+          HAND
+        </div>
+        <div
+          className="menu-link"
+          onClick={() => {
+            history.push("/prompts");
+          }}
+        >
+          QUESTIONS
+        </div>
+        <div
+          className="menu-link"
+          onClick={() => {
+            history.push("/about");
+          }}
+        >
+          ABOUT
+        </div>
       </div>
     </div>
   );
