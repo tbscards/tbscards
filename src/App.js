@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import {
-  BrowserRouter as Switch,
+  BrowserRouter as Router,
+  Switch,
   Route,
-  withRouter
+  Link,
+  withRouter,
+  Redirect
 } from "react-router-dom";
 import Password from './password/password.js'
 import Dashboard from './dashboard/dashboard.js';
