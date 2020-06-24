@@ -3,7 +3,8 @@ import {
     GET_CARDS_FROM_HAND,
     REMOVE_CARD_FROM_HAND,
     SET_HAND,
-    GET_TEXT
+    GET_TEXT,
+    SET_AUTH
 } from '../actions/actionTypes.js';
 
 const initialState = {
@@ -14,7 +15,8 @@ const initialState = {
     tactics: [],
     themes: [],
     hand: [],
-    text: ["", "", ""]
+    text: ["", "", ""],
+    auth: null
 }
 
 const collectionToCategory = {
@@ -70,6 +72,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 text: textArray
+            }
+        case SET_AUTH:
+            return {
+                ...state,
+                auth: action.status
             }
         default:
             return state;
