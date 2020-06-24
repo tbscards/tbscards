@@ -87,7 +87,7 @@ class App extends Component {
   handlePassword = async (event) => {
     const isValid = await validatePassword(this.state.password)
     if (isValid) {
-      Cookies.set('auth', this.state.password)
+      Cookies.set('auth', this.state.password, {expires: 14})
       this.props.setAuth(true);
       this.props.history.push("about");
       this.getCards()
