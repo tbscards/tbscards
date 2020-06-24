@@ -8,6 +8,14 @@ import "./menu.css";
 const Menu = (props) => {
   const history = useHistory();
 
+  const logOut = () => {
+    console.log("Log Out Pressed");
+    // RESET HAND?
+    // DELETE ALL CARDS?
+    // JUST DELETE TOKEN?
+    // ALL OF THE ABOVE?
+  };
+
   return (
     <div className={`menu ${props.open ? "open" : "closed"}`}>
       <div className="menu-list">
