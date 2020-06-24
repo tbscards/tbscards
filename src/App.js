@@ -25,8 +25,7 @@ class App extends Component {
 
   state = {
     password: '',
-    error: '',
-    // isAuth: null
+    error: ''
   }
 
   async componentDidMount() {
@@ -34,13 +33,10 @@ class App extends Component {
     const auth = authExists ? Cookies.get('auth') : 'noCookie';
     const isValid = await validatePassword(auth);
     if (isValid) {
-      // this.setState({isAuth: true}, () => this.props.history.push("about"))
       this.props.setAuth(true);
       this.props.history.push("about");
-
       this.getCards()
     } else {
-      // this.setState({isAuth: false})
       this.props.setAuth(false);
     }
   }
@@ -92,10 +88,8 @@ class App extends Component {
     const isValid = await validatePassword(this.state.password)
     if (isValid) {
       Cookies.set('auth', this.state.password)
-      // this.setState({isAuth: true}, () => this.props.history.push("about"))
       this.props.setAuth(true);
       this.props.history.push("about");
-
       this.getCards()
     } else {
       this.setState({error: 'Password is incorrect'})
@@ -113,7 +107,6 @@ class App extends Component {
   }
 
   render() {
-    // const {isAuth} =this.state
     const { auth } = this.props
     return(
       <Switch>

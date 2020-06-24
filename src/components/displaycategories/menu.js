@@ -48,7 +48,6 @@ const Menu = (props) => {
           onClick={() => {
             Cookies.remove('auth');
             localStorage.clear();
-            // setRedirect(true);
             props.setAuth(false)
           }}
         >
