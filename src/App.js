@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Switch, Route, withRouter } from "react-router-dom";
 import Password from "./password/password.js";
 import Dashboard from "./dashboard/dashboard.js";
 import {
@@ -8,26 +7,24 @@ import {
   Route,
   Link,
   withRouter,
-  Redirect
+  Redirect,
 } from "react-router-dom";
-import Password from './password/password.js'
-import Dashboard from './dashboard/dashboard.js';
 import {
   GET_CARDS_FROM_CATEGORY,
   SET_HAND,
-  SET_AUTH
-} from './store/actions/actionTypes.js';
-import { connect } from 'react-redux';
-import { getCategory, validatePassword } from './actions/firestoreactions';
-import Categories from './constants/Categories';
-import Cookies from 'js-cookie';
+  SET_AUTH,
+} from "./store/actions/actionTypes.js";
+import { connect } from "react-redux";
+import { getCategory, validatePassword } from "./actions/firestoreactions";
+import Categories from "./constants/Categories";
+import Cookies from "js-cookie";
 import Loading from "./components/loading/loading.js";
 
 class App extends Component {
   state = {
-    password: '',
-    error: ''
-  }
+    password: "",
+    error: "",
+  };
 
   async componentDidMount() {
     const authExists = !(Cookies.get("auth") === undefined);
@@ -36,7 +33,7 @@ class App extends Component {
     if (isValid) {
       this.props.setAuth(true);
       this.props.history.push("about");
-      this.getCards()
+      this.getCards();
     } else {
       this.props.setAuth(false);
     }
@@ -130,10 +127,10 @@ class App extends Component {
   handlePassword = async (event) => {
     const isValid = await validatePassword(this.state.password);
     if (isValid) {
-      Cookies.set('auth', this.state.password)
+      Cookies.set("auth", this.state.password);
       this.props.setAuth(true);
       this.props.history.push("about");
-      this.getCards()
+      this.getCards();
     } else {
       this.setState({ error: "Password is incorrect" });
     }
@@ -150,23 +147,31 @@ class App extends Component {
   };
 
   render() {
-    const { auth } = this.props
-    return(
+    const { auth } = this.props;
+    return (
       <Switch>
-          <Route exact path="/" render={routeProps => {
+        <Route
+          exact
+          path="/"
+          render={(routeProps) => {
             if (auth === null) {
-              return (<Loading {...routeProps} />)
+              return <Loading {...routeProps} />;
             } else {
               return (
                 <Password
-                {...routeProps}
-                handleChange={this.handleChange}
-                handlePassword={this.handlePassword}
-                error={this.state.error}/>
-              )
-            }}}
-          />
-          <Route path="/" render={routeProps => <Dashboard {...routeProps} isAuth={auth} />}/>
+                  {...routeProps}
+                  handleChange={this.handleChange}
+                  handlePassword={this.handlePassword}
+                  error={this.state.error}
+                />
+              );
+            }
+          }}
+        />
+        <Route
+          path="/"
+          render={(routeProps) => <Dashboard {...routeProps} isAuth={auth} />}
+        />
       </Switch>
     );
   }
@@ -204,7 +209,7 @@ const mapDispatchToProps = (dispatch) => {
         type: SET_AUTH,
         status: auth,
       });
-    }
+    },
   };
 };
 
