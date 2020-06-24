@@ -3,3 +3,4 @@ export const GET_CARDS_FROM_HAND = "GET_CARDS_FROM_HAND";
 export const REMOVE_CARD_FROM_HAND = "REMOVE_CARD_FROM_HAND";
 export const SET_HAND = "SET_HAND"
 export const GET_TEXT = "GET_TEXT"
+export const SET_AUTH = "SET_AUTH"

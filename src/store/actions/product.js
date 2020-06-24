@@ -3,7 +3,8 @@ import {
   GET_CARDS_FROM_HAND,
   REMOVE_CARD_FROM_HAND,
   SET_HAND,
-  GET_TEXT
+  GET_TEXT,
+  SET_AUTH
 } from './actionTypes.js';
 
 export const getCardsFromCategory = (myCategory, myCards) => {
@@ -40,5 +41,12 @@ export const getText = (text, index) => {
     type: GET_TEXT,
     text: text,
     index: index
+  }
+}
+
+export const setAuth = (auth) => {
+  return {
+    type: SET_AUTH,
+    status: auth
   }
 }
