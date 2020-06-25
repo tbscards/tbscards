@@ -2,7 +2,6 @@
   width: 100%;
   height: 100%;
   max-width: 1200px;
-  max-height: 1600px;
   margin: auto;
   color: #fff;
   display: flex;
@@ -18,7 +17,6 @@
 .wrapperAbout p {
   width: 100%;
   padding: 3%;
-  font-size: large;
 }
 
 .wrapperAbout h2 {
@@ -49,4 +47,19 @@
 
 .made-by-tbs {
   text-align: center;
+}
+
+.exposition-label{
+  max-width: 700px;
+  margin: 10%;
+}
+
+@media only screen and (max-width: 480px) {
+  .wrapperAbout-title {
+    font-size: 36px;
+  }
+
+  .made-by-tbs{
+    font-size: 14px;
+  }
 }

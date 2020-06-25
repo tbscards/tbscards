@@ -55,7 +55,7 @@ class Prompts extends Component {
       <div className="wrapperPrompts">
         <h1 className="wrapper-prompts-title">Questions</h1>
         <div className="prompts">
-          <h3>What's your community? </h3>
+          <h3>What is your community? </h3>
           <textarea
             value={this.state.text0}
             onChange={this.handleChangeText0}

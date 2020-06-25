@@ -32,11 +32,12 @@ const DisplayCategories = (props) => {
       <div className="exposition-label categories-explain">
         The cards are divided into sections. Determine goal based on your
         answers to the questions and choose one (at most two) cards from each
-        category
+        category.
       </div>
 
       <BurgerButton />
       <div className="content-wrapper">
+  
         {principleKeys.map((principleKey, idx) => {
           return (
             <CategoryCard
@@ -49,7 +50,7 @@ const DisplayCategories = (props) => {
             />
           );
         })}
-        <h3>Made with ♡ by The Black School</h3>
+        <h3 className="made-by-tbs">Made with ♡ by The Black School</h3>
       </div>
     </div>
   );

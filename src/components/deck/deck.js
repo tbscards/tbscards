@@ -74,7 +74,7 @@ const Deck = (props) => {
 
   return (
     <div className="deckWrapper">
-      <h1 className="deck-label">Choose your cards</h1>
+      <h1 className="deck-label">Choose<br/>your cards</h1>
       <div className="Carousel">
         <ReactCardCarousel
           spread="wide"

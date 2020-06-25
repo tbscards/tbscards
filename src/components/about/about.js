@@ -6,20 +6,20 @@ import { Link } from "react-router-dom";
 export default function About(props) {
   return (
     <div className="wrapperAbout">
-      <h1>About</h1>
+      <h1 className="wrapperAbout-title">About</h1>
       <div className="exposition-label">
-        The Black School Process cards are a tarot inspired interactive tool for
+        The Black School Process Cards are a tarot-inspired interactive tool for
         teaching our methodology for designing creative activism projects from a
         Black radical perspective.
         <br></br>
         <br></br>
-        Through a series of questions and choices participants identify issues
+        Through a series of questions and choices, participants identify issues
         of primary significance to them, define the terms and context around
-        those issues and design impactful projects to address them
+        those issues, and design impactful projects to address them.
       </div>
-      <h1>Instructions</h1>
+      <h1 className="wrapperAbout-title">Instructions</h1>
       <div className="exposition-label">
-        Use the cards and PROJECT OUTLINE template to design creative actions.
+        Use the cards and the QUESTIONS template to design creative actions.
         Please choose one or two cards from each of the following categories:
       </div>
       <div className="exposition-label about-categories-list">

@@ -31,7 +31,7 @@
 .card-hand-content {
   height: 100%;
   width: 100%;
-  padding: 7px;
+  padding: 7%;
   position: absolute;
 }
 
@@ -60,6 +60,8 @@
   font-family: "value";
   height: fit-content;
   position: absolute;
+  margin-left:5%;
+  margin-right:5%;
   top: 40%;
 }
 
