@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./prompts.css";
+import Authenticator from '../Authenticator/Authenticator'
 
 // Redux
 import { connect } from "react-redux";
@@ -106,4 +107,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Prompts);
+export default Authenticator(connect(mapStateToProps, mapDispatchToProps)(Prompts));

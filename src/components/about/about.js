@@ -1,9 +1,10 @@
 import React from "react";
 import "./about.css";
+import Authenticator from '../Authenticator/Authenticator'
 
 import { Link } from "react-router-dom";
 
-export default function About(props) {
+function About(props) {
   return (
     <div className="wrapperAbout">
       <h1 className="wrapperAbout-title">About</h1>
@@ -42,3 +43,5 @@ export default function About(props) {
     </div>
   );
 }
+
+export default Authenticator(About);
