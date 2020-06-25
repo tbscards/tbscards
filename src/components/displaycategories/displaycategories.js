@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import Authenticator from '../Authenticator/Authenticator'
 
 import BurgerButton from "./burger.js";
 import CategoryCard from "./categoryCard";
@@ -56,4 +57,4 @@ const DisplayCategories = (props) => {
   );
 };
 
-export default DisplayCategories;
+export default Authenticator(DisplayCategories);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { connect } from "react-redux";
-
+import Authenticator from '../Authenticator/Authenticator'
 import {
   GET_CARDS_FROM_HAND,
   REMOVE_CARD_FROM_HAND,
@@ -121,4 +121,4 @@ const mapDispatchToProps = (dispatch) => {
     },
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Deck);
+export default Authenticator(connect(mapStateToProps, mapDispatchToProps)(Deck));

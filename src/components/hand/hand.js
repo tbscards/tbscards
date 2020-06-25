@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import Authenticator from '../Authenticator/Authenticator'
 
 import {
   REMOVE_CARD_FROM_HAND,
@@ -116,4 +117,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hand);
+export default Authenticator(connect(mapStateToProps, mapDispatchToProps)(Hand));

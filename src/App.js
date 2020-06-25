@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import Password from "./password/password.js";
 import Dashboard from "./dashboard/dashboard.js";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   withRouter,
-  Redirect,
+  Redirect
 } from "react-router-dom";
 import {
   GET_CARDS_FROM_CATEGORY,
@@ -127,7 +125,8 @@ class App extends Component {
   handlePassword = async (event) => {
     const isValid = await validatePassword(this.state.password);
     if (isValid) {
-      Cookies.set("auth", this.state.password);
+      // Cookie expires in 14 days
+      Cookies.set('auth', this.state.password, {expires: 14})
       this.props.setAuth(true);
       this.props.history.push("about");
       this.getCards();
@@ -148,32 +147,31 @@ class App extends Component {
 
   render() {
     const { auth } = this.props;
-    return (
-      <Switch>
-        <Route
-          exact
-          path="/"
-          render={(routeProps) => {
-            if (auth === null) {
-              return <Loading {...routeProps} />;
-            } else {
-              return (
-                <Password
-                  {...routeProps}
-                  handleChange={this.handleChange}
-                  handlePassword={this.handlePassword}
-                  error={this.state.error}
-                />
-              );
-            }
-          }}
-        />
-        <Route
-          path="/"
-          render={(routeProps) => <Dashboard {...routeProps} isAuth={auth} />}
-        />
-      </Switch>
-    );
+    if (auth === null) {
+      return (
+        <Switch>
+          <Route path="/" render={routeProps => <Loading {...routeProps} />}/>
+        </Switch>
+      )
+    } else if (auth) {
+      return <Dashboard/>
+    } else {
+      return (
+        <Switch>
+          <Route exact path="/" render={routeProps => {
+            return (
+              <Password
+                {...routeProps}
+                handleChange={this.handleChange}
+                handlePassword={this.handlePassword}
+                error={this.state.error}
+              />
+            )
+          }} />
+          <Route path="/" render={() => <Redirect to="/" />} />
+        </Switch>
+      )
+    }
   }
 }
 
