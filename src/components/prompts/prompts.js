@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import "./prompts.css";
 import Authenticator from '../Authenticator/Authenticator'
 
+// Imports used for data reformat
+// import Categories from '../../constants/Categories'
+// import CollectionMap from '../../constants/CollectionMap'
+// import { sendReformattedCards } from '../../actions/firestoreactions'
+
 // Redux
 import { connect } from "react-redux";
 import { GET_TEXT } from "../../store/actions/actionTypes.js";
@@ -51,10 +56,30 @@ class Prompts extends Component {
     localStorage.setItem("text2", this.props.text[2]);
   };
 
+  // THIS FUNCTION REFORMATS THE OLD DATA INTO NEW DATA TO PUT INTO FIREBASE
+  // ** USE WITH CAUTION **
+
+  // reformatData = () => {
+  //   const categories = Object.values(Categories)
+  //   let allCards = {}
+  //   for (let i = 0; i < categories.length; i++) {
+  //     let categoryCards = JSON.parse(localStorage.getItem(categories[i]))
+  //     categoryCards.forEach((card, j) => {
+  //       card.id = `${CollectionMap[categories[i]].toUpperCase()}_${j}`
+  //       delete card.category
+  //     })
+  //     allCards[CollectionMap[categories[i]].toUpperCase()] = categoryCards;
+  //   }
+  //   console.log(allCards)
+  //   sendReformattedCards(allCards)
+  // }
+
   render() {
     return (
       <div className="wrapperPrompts">
         <h1 className="wrapper-prompts-title">Questions</h1>
+        {/* THIS WAS USED TO TRIGGER THE DATABASE TO BE REFORMATTED */}
+        {/* <button onClick={() => this.reformatData()}>Reformat Data</button> */}
         <div className="prompts">
           <h3>What is your community? </h3>
           <textarea
