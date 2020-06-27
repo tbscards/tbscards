@@ -52,7 +52,7 @@ const Deck = (props) => {
   };
 
   const removeFromHand = () => {
-    props.onRemoveFromHand(props.principles[carousel.getCurrentIndex()].id);
+    props.onRemoveFromHand(cards[carousel.getCurrentIndex()].id);
   };
 
   // Map data into components
