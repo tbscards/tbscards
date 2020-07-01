@@ -50,8 +50,6 @@ const Menu = (props) => {
           }}
         >
           HAND
-<<<<<<< HEAD
-=======
         </div>
         <div
           className="menu-link"
@@ -62,7 +60,6 @@ const Menu = (props) => {
           }}
         >
           EXIT
->>>>>>> 112592589794f57c6dcdc724302489242b94eb14
         </div>
        
       </div>

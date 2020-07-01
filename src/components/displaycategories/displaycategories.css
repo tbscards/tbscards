@@ -78,17 +78,14 @@ p {
 }
 
 .categories-explain {
-<<<<<<< HEAD
   padding: 50px;
   width:580px;
   text-align: left;
-=======
   max-width: 80%;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   margin: auto;
-  text-align: center;
->>>>>>> 112592589794f57c6dcdc724302489242b94eb14
 }
+
 
 .display-categories-wrapper .content-wrapper {
   width: 100%;
