@@ -8,6 +8,22 @@ const Menu = ({ open }) => {
   return (
     <div className={`menu ${open ? "open" : "closed"}`}>
       <div className="menu-list">
+      <div
+          className="menu-link"
+          onClick={() => {
+            history.push("/about");
+          }}
+        >
+          ABOUT
+        </div>
+        <div
+          className="menu-link"
+          onClick={() => {
+            history.push("/prompts");
+          }}
+        >
+          QUESTIONS
+        </div>
         <div
           className="menu-link"
           onClick={() => {
@@ -24,22 +40,7 @@ const Menu = ({ open }) => {
         >
           HAND
         </div>
-        <div
-          className="menu-link"
-          onClick={() => {
-            history.push("/prompts");
-          }}
-        >
-          QUESTIONS
-        </div>
-        <div
-          className="menu-link"
-          onClick={() => {
-            history.push("/about");
-          }}
-        >
-          ABOUT
-        </div>
+       
       </div>
     </div>
   );

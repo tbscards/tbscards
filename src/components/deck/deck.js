@@ -10,6 +10,8 @@ import {
 import Card from "../CardHand/CardHand.js";
 import ReactCardCarousel from "react-card-carousel";
 import BurgerButton from "../displaycategories/burger.js";
+import HandIcon from "../../svg/icon_hand.svg";
+import { Link } from "react-router-dom";
 
 import "./deck.css";
 
@@ -74,6 +76,14 @@ const Deck = (props) => {
 
   return (
     <div className="deckWrapper">
+       <div className="wrapper-handicon"> 
+       <img
+          src={HandIcon}
+          alt="Hand Icon"
+          className="hand-icon"
+          onClick={removeFromHand}
+        />
+        </div>
       <h1 className="deck-label">Choose<br/>your cards</h1>
       <div className="Carousel">
         <ReactCardCarousel
