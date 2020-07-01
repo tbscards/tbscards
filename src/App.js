@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import Password from "./password/password.js";
 import Dashboard from "./dashboard/dashboard.js";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   withRouter,
-  Redirect,
+  Redirect
 } from "react-router-dom";
 import {
   GET_CARDS_FROM_CATEGORY,
@@ -15,7 +13,7 @@ import {
   SET_AUTH,
 } from "./store/actions/actionTypes.js";
 import { connect } from "react-redux";
-import { getCategory, validatePassword } from "./actions/firestoreactions";
+import { getAllCards, validatePassword } from "./actions/firestoreactions";
 import Categories from "./constants/Categories";
 import Cookies from "js-cookie";
 import Loading from "./components/loading/loading.js";
@@ -52,31 +50,15 @@ class App extends Component {
   }
 
   async getCardsFromDatabase() {
-    console.log("fetching cards from database...");
-    this.props.onUpdateCards(
-      Categories.FORM,
-      await getCategory(Categories.FORM)
-    );
-    this.props.onUpdateCards(
-      Categories.MEDIUM,
-      await getCategory(Categories.MEDIUM)
-    );
-    this.props.onUpdateCards(
-      Categories.PRINCIPLES,
-      await getCategory(Categories.PRINCIPLES)
-    );
-    this.props.onUpdateCards(
-      Categories.QUESTIONS,
-      await getCategory(Categories.QUESTIONS)
-    );
-    this.props.onUpdateCards(
-      Categories.TACTIC,
-      await getCategory(Categories.TACTIC)
-    );
-    this.props.onUpdateCards(
-      Categories.THEME,
-      await getCategory(Categories.THEME)
-    );
+    console.log("Fetching cards from database...");
+    const allCards = await getAllCards();
+    console.log(allCards)
+    this.props.onUpdateCards(Categories.FORM, allCards.FORMS);
+    this.props.onUpdateCards(Categories.MEDIUM, allCards.MEDIUMS);
+    this.props.onUpdateCards(Categories.PRINCIPLES, allCards.PRINCIPLES);
+    this.props.onUpdateCards(Categories.QUESTIONS, allCards.QUESTIONS);
+    this.props.onUpdateCards(Categories.TACTIC, allCards.TACTICS);
+    this.props.onUpdateCards(Categories.THEME, allCards.THEMES);
 
     localStorage.setItem(Categories.FORM, JSON.stringify(this.props.forms));
     localStorage.setItem(Categories.MEDIUM, JSON.stringify(this.props.mediums));
@@ -93,7 +75,6 @@ class App extends Component {
   }
 
   getCardsFromLocalStorage() {
-    console.log("getting cards from localstorage...");
     this.props.onUpdateCards(
       Categories.FORM,
       JSON.parse(localStorage.getItem(Categories.FORM))
@@ -127,7 +108,8 @@ class App extends Component {
   handlePassword = async (event) => {
     const isValid = await validatePassword(this.state.password);
     if (isValid) {
-      Cookies.set("auth", this.state.password);
+      // Cookie expires in 14 days
+      Cookies.set('auth', this.state.password, {expires: 14})
       this.props.setAuth(true);
       this.props.history.push("about");
       this.getCards();
@@ -148,32 +130,31 @@ class App extends Component {
 
   render() {
     const { auth } = this.props;
-    return (
-      <Switch>
-        <Route
-          exact
-          path="/"
-          render={(routeProps) => {
-            if (auth === null) {
-              return <Loading {...routeProps} />;
-            } else {
-              return (
-                <Password
-                  {...routeProps}
-                  handleChange={this.handleChange}
-                  handlePassword={this.handlePassword}
-                  error={this.state.error}
-                />
-              );
-            }
-          }}
-        />
-        <Route
-          path="/"
-          render={(routeProps) => <Dashboard {...routeProps} isAuth={auth} />}
-        />
-      </Switch>
-    );
+    if (auth === null) {
+      return (
+        <Switch>
+          <Route path="/" render={routeProps => <Loading {...routeProps} />}/>
+        </Switch>
+      )
+    } else if (auth) {
+      return <Dashboard/>
+    } else {
+      return (
+        <Switch>
+          <Route exact path="/" render={routeProps => {
+            return (
+              <Password
+                {...routeProps}
+                handleChange={this.handleChange}
+                handlePassword={this.handlePassword}
+                error={this.state.error}
+              />
+            )
+          }} />
+          <Route path="/" render={() => <Redirect to="/" />} />
+        </Switch>
+      )
+    }
   }
 }
 
