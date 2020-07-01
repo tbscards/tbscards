@@ -67,7 +67,6 @@ p {
   flex-direction: column;
   justify-content: space-around;
   border: 7px solid #fff;
-  padding: 0;
   align-items: flex-start;
   position: relative;
   overflow: hidden;
@@ -76,11 +75,12 @@ p {
 .display-categories-title {
   text-align: center;
   width: 100%;
-  padding: 0;
 }
 
 .categories-explain {
-  padding: 33px;
+  max-width: 80%;
+  padding-bottom: 20px;
+  margin: auto;
   text-align: center;
 }
 

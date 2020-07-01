@@ -22,18 +22,10 @@ const Menu = (props) => {
         <div
           className="menu-link"
           onClick={() => {
-            history.push("/displaycategories");
+            history.push("/about");
           }}
         >
-          CATEGORIES
-        </div>
-        <div
-          className="menu-link"
-          onClick={() => {
-            history.push("/hand");
-          }}
-        >
-          HAND
+          ABOUT
         </div>
         <div
           className="menu-link"
@@ -46,10 +38,18 @@ const Menu = (props) => {
         <div
           className="menu-link"
           onClick={() => {
-            history.push("/about");
+            history.push("/displaycategories");
           }}
         >
-          ABOUT
+          CATEGORIES
+        </div>
+        <div
+          className="menu-link"
+          onClick={() => {
+            history.push("/hand");
+          }}
+        >
+          HAND
         </div>
         <div
           className="menu-link"
