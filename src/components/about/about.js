@@ -22,8 +22,9 @@ export default function About(props) {
         Use the cards and the QUESTIONS template to design creative actions.
         Please choose one or two cards from each of the following categories:
       </div>
-      <div className="exposition-label about-categories-list">
-        PRINCIPLE: goals and issues
+      <div className="exposition-label bodytext">
+      <div className="heading-title">
+        {/* PRINCIPLE: goals and issues
         <br></br>
         TACTIC: to act on principles
         <br></br>
@@ -33,7 +34,32 @@ export default function About(props) {
         <br></br>
         FORM: how it looks
         <br></br>
-        THEME: to stimulate further creative thinking
+        THEME: to stimulate further creative thinking */}
+        PRINCIPLE: 
+        <br></br>
+        TACTIC: 
+        <br></br>
+        QUESTION: 
+        <br></br>
+        MEDIUM: 
+        <br></br>
+        FORM: 
+        <br></br>
+        THEME: 
+      </div>
+      <div className="heading-body">
+      Goals and issues
+        <br></br>
+        To act on principles
+        <br></br>
+        To stimulate thinking on principles
+        <br></br>
+        How it’s made
+        <br></br>
+        How it looks
+        <br></br>
+        To stimulate further creative thinking
+      </div>
       </div>
       <Link to="/prompts">
         <button className="aboutContinueButton">Start</button>
