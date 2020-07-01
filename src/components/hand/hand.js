@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import Authenticator from '../Authenticator/Authenticator'
+import Authenticator from "../Authenticator/Authenticator";
 
 import {
   REMOVE_CARD_FROM_HAND,
@@ -13,9 +13,6 @@ import BurgerButton from "../displaycategories/burger.js";
 import "./hand.css";
 
 const Hand = (props) => {
-  const [mailModal, setMailModal] = useState(false); // To get email from the user
-  const [userEmail, setUserEmail] = useState("hello@xyz.com");
-
   const toText = () => {
     let text = "";
 
@@ -58,23 +55,18 @@ const Hand = (props) => {
           <>
             <div className="cards-container">{cards}</div>
             <div
-              className="menu-link"
+              className="menu-link hand--button"
               onClick={() => {
-                console.log("E-MAIL");
                 let text = toText();
-                console.log(text);
                 window.open(
-                  `mailto:${encodeURIComponent(
-                    userEmail
-                  )}?subject=This is the subject&body=${text}`
+                  `mailto:?subject=The Black School Workshop&body=${text}`
                 );
-                setMailModal(true);
               }}
             >
               E-MAIL HAND
             </div>
             <div
-              className="menu-link"
+              className="menu-link hand--button"
               onClick={() => {
                 props.resetHand();
               }}
@@ -117,4 +109,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default Authenticator(connect(mapStateToProps, mapDispatchToProps)(Hand));
+export default Authenticator(
+  connect(mapStateToProps, mapDispatchToProps)(Hand)
+);

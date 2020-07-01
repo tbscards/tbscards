@@ -49,11 +49,24 @@
   right: 0;
 }
 
+.hand--button {
+  position: relative;
+  padding: 1%;
+  border: 2px solid #fff;
+  box-shadow: 3px 3px rgba(255, 255, 255, 0.4);
+  transition: top ease 0.3s;
+}
+
+.hand--button:hover {
+  box-shadow: 3px 5px rgba(255, 255, 255, 0.3);
+  top: -4px;
+}
+
 @media only screen and (max-width: 480px) {
   .hand-title {
     font-size: 36px;
   }
-  h3{
+  h3 {
     font-size: 14px;
   }
 }

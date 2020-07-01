@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import Authenticator from '../Authenticator/Authenticator'
+import Authenticator from "../Authenticator/Authenticator";
 import {
   GET_CARDS_FROM_HAND,
   REMOVE_CARD_FROM_HAND,
@@ -11,11 +11,11 @@ import Card from "../CardHand/CardHand.js";
 import ReactCardCarousel from "react-card-carousel";
 import BurgerButton from "../displaycategories/burger.js";
 import HandIcon from "../../svg/icon_hand.svg";
-import { Link } from "react-router-dom";
 
 import "./deck.css";
 
 const Deck = (props) => {
+  const history = useHistory();
   // Carousel Reference
   const [carousel, setCarousel] = useState([]);
 
@@ -57,6 +57,10 @@ const Deck = (props) => {
     props.onRemoveFromHand(cards[carousel.getCurrentIndex()].id);
   };
 
+  const onClickHand = () => {
+    history.push("/hand");
+  };
+
   // Map data into components
   const tar = cards.map((el) => {
     const selected = props.hand.some((ha) => {
@@ -76,15 +80,19 @@ const Deck = (props) => {
 
   return (
     <div className="deckWrapper">
-       <div className="wrapper-handicon"> 
-       <img
+      <div className="wrapper-handicon">
+        <img
           src={HandIcon}
           alt="Hand Icon"
           className="hand-icon"
-          onClick={removeFromHand}
+          onClick={onClickHand}
         />
-        </div>
-      <h1 className="deck-label">Choose<br/>your cards</h1>
+      </div>
+      <h1 className="deck-label">
+        Choose
+        <br />
+        your cards
+      </h1>
       <div className="Carousel">
         <ReactCardCarousel
           spread="wide"
@@ -131,4 +139,6 @@ const mapDispatchToProps = (dispatch) => {
     },
   };
 };
-export default Authenticator(connect(mapStateToProps, mapDispatchToProps)(Deck));
+export default Authenticator(
+  connect(mapStateToProps, mapDispatchToProps)(Deck)
+);
