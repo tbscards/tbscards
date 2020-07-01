@@ -67,7 +67,6 @@ p {
   flex-direction: column;
   justify-content: space-around;
   border: 7px solid #fff;
-  padding: 0;
   align-items: flex-start;
   position: relative;
   overflow: hidden;
@@ -79,9 +78,16 @@ p {
 }
 
 .categories-explain {
+<<<<<<< HEAD
   padding: 50px;
   width:580px;
   text-align: left;
+=======
+  max-width: 80%;
+  padding-bottom: 20px;
+  margin: auto;
+  text-align: center;
+>>>>>>> 112592589794f57c6dcdc724302489242b94eb14
 }
 
 .display-categories-wrapper .content-wrapper {

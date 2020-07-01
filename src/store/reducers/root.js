@@ -3,7 +3,9 @@ import {
     GET_CARDS_FROM_HAND,
     REMOVE_CARD_FROM_HAND,
     SET_HAND,
-    GET_TEXT
+    GET_TEXT,
+    SET_AUTH,
+    RESET_HAND
 } from '../actions/actionTypes.js';
 
 const initialState = {
@@ -14,17 +16,18 @@ const initialState = {
     tactics: [],
     themes: [],
     hand: [],
-    text: ["", "", ""]
+    text: ["", "", ""],
+    auth: null
 }
 
 const collectionToCategory = {
-    'cards_form': 'forms',
-    'cards_medium': 'mediums',
-    'cards_principle': 'principles',
-    'cards_question': 'questions',
-    'cards_tactic': 'tactics',
-    'cards_theme': 'themes'
-}
+  cards_form: "forms",
+  cards_medium: "mediums",
+  cards_principle: "principles",
+  cards_question: "questions",
+  cards_tactic: "tactics",
+  cards_theme: "themes",
+};
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -71,6 +74,18 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 text: textArray
             }
+        case SET_AUTH:
+            return {
+                ...state,
+                auth: action.status
+            }
+        case RESET_HAND:
+              const resetHand = [];
+              localStorage.setItem("hand", JSON.stringify(resetHand));
+              return {
+                ...state,
+                hand: resetHand,
+              };
         default:
             return state;
     }
