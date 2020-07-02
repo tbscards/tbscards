@@ -16,7 +16,6 @@
 .wrapperAbout h2,
 .wrapperAbout p {
   width: 100%;
-  padding: 3%;
 }
 
 .wrapperAbout h2 {
@@ -25,9 +24,9 @@
 
 .wrapperAbout a {
   width: 100%;
-  height: 10vh;
+  height: 1vh;
   text-align: center;
-  margin: 4%;
+  margin: 5%;
 }
 
 .about-categories-list {
@@ -49,9 +48,29 @@
   text-align: center;
 }
 
+/* h3.made-by-tbs {
+  padding:7%;
+} */
+
 .exposition-label{
   max-width: 700px;
   margin: 10%;
+}
+
+.bodytext{
+  display:flex;
+}
+
+.heading-title{
+  font-size:16px;
+  font-weight: 800;
+  line-height: 1.75em;
+}
+
+.heading-body{
+  font-size:16px;
+  margin-left:8%;
+  line-height: 1.75em;
 }
 
 @media only screen and (max-width: 480px) {

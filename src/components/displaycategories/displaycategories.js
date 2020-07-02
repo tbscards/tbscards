@@ -30,7 +30,7 @@ const DisplayCategories = (props) => {
   return (
     <div className="display-categories-wrapper">
       <h1 className="display-categories-title">Categories</h1>
-      <div className="exposition-label categories-explain">
+      <div className="categories-explain">
         The cards are divided into sections. Determine goal based on your
         answers to the questions and choose one (at most two) cards from each
         category.

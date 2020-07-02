@@ -67,7 +67,6 @@ p {
   flex-direction: column;
   justify-content: space-around;
   border: 7px solid #fff;
-  padding: 0;
   align-items: flex-start;
   position: relative;
   overflow: hidden;
@@ -76,13 +75,17 @@ p {
 .display-categories-title {
   text-align: center;
   width: 100%;
-  padding: 0;
 }
 
 .categories-explain {
-  padding: 33px;
-  text-align: center;
+  padding: 50px;
+  width:580px;
+  text-align: left;
+  max-width: 80%;
+  padding-bottom: 50px;
+  margin: auto;
 }
+
 
 .display-categories-wrapper .content-wrapper {
   width: 100%;
@@ -114,6 +117,9 @@ p {
 @media only screen and (max-width: 480px) {
   .display-categories-title{
     font-size: 36px;
+  }
+  .made-by-tbs{
+    font-size: 14px;
   }
 
 }

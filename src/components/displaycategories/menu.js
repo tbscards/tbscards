@@ -1,24 +1,32 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 import { connect } from "react-redux";
-import { SET_AUTH } from '../../store/actions/actionTypes.js';
+import { SET_AUTH } from "../../store/actions/actionTypes.js";
 import "./menu.css";
 
 const Menu = (props) => {
   const history = useHistory();
 
-  const logOut = () => {
-    console.log("Log Out Pressed");
-    // RESET HAND?
-    // DELETE ALL CARDS?
-    // JUST DELETE TOKEN?
-    // ALL OF THE ABOVE?
-  };
-
   return (
     <div className={`menu ${props.open ? "open" : "closed"}`}>
       <div className="menu-list">
+        <div
+          className="menu-link"
+          onClick={() => {
+            history.push("/about");
+          }}
+        >
+          ABOUT
+        </div>
+        <div
+          className="menu-link"
+          onClick={() => {
+            history.push("/prompts");
+          }}
+        >
+          QUESTIONS
+        </div>
         <div
           className="menu-link"
           onClick={() => {
@@ -38,25 +46,9 @@ const Menu = (props) => {
         <div
           className="menu-link"
           onClick={() => {
-            history.push("/prompts");
-          }}
-        >
-          QUESTIONS
-        </div>
-        <div
-          className="menu-link"
-          onClick={() => {
-            history.push("/about");
-          }}
-        >
-          ABOUT
-        </div>
-        <div
-          className="menu-link"
-          onClick={() => {
-            Cookies.remove('auth');
+            Cookies.remove("auth");
             localStorage.clear();
-            props.setAuth(false)
+            props.setAuth(false);
           }}
         >
           EXIT
@@ -73,7 +65,7 @@ const mapDispatchToProps = (dispatch) => {
         type: SET_AUTH,
         status: auth,
       });
-    }
+    },
   };
 };
 
