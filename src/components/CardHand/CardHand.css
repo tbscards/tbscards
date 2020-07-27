@@ -48,19 +48,26 @@
   font-size: 20px;
   font-weight: 300;
   color: gray;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
+}
+
+.card-hand-inframe{
+  margin-left: 24px;
+  margin-right: 24px;
 }
 
 .card-hand-title {
+  font-size: 32px;
+  margin-top: 5px;
   text-align: center;
-  font-size: 40px;
 }
 
 .card-hand-body {
   font-family: "value";
+  font-weight: 800;
+  font-size: 12px;
   height: fit-content;
-  position: absolute;
-  top: 40%;
+  margin-top: 10px;
 }
 
 ._theme {
@@ -91,12 +98,12 @@
   .card-hand {
     width: 250px;
   }
-
+/* 
   .card-hand-category {
-    margin-bottom: 25px;
+    margin-bottom: 0px;
   }
 
   .card-hand-title {
-    font-size: 36px;
-  }
+    font-size: 32px;
+  } */
 }

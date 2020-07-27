@@ -39,9 +39,11 @@ const CardHand = ({ title, body, category, removeFromHand, selected }) => {
       <div className="card-hand-content">
         <div className="card-hand-header">
           <div className="card-hand-category">{category}</div>
-          <div className="card-hand-title">{title}</div>
         </div>
-        {body.length > 0 ? <div className="card-hand-body">{body}</div> : null}
+          <div className='card-hand-inframe'>
+            <div className="card-hand-title">{title}</div>
+            {body.length > 0 ? <div className="card-hand-body">{body}</div> : null}
+          </div>
       </div>
     </div>
   );
