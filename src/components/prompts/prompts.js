@@ -10,6 +10,7 @@ import Authenticator from '../Authenticator/Authenticator'
 // Redux
 import { connect } from "react-redux";
 import { GET_TEXT } from "../../store/actions/actionTypes.js";
+import BurgerButton from "../displaycategories/burger.js";
 
 import { Link } from "react-router-dom";
 
@@ -80,6 +81,9 @@ class Prompts extends Component {
         <h1 className="wrapper-prompts-title">Questions</h1>
         {/* THIS WAS USED TO TRIGGER THE DATABASE TO BE REFORMATTED */}
         {/* <button onClick={() => this.reformatData()}>Reformat Data</button> */}
+        <div className="burger-button-wrapper">
+          <BurgerButton />
+        </div>
         <div className="prompts">
           <h3>What is your community? </h3>
           <textarea
