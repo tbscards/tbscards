@@ -1,15 +1,18 @@
 .wrapperPrompts {
   width: 100%;
-  height: 100%;
   max-width: 1200px;
+  min-height: 100vh;
   margin: auto;
+  background-color: #000;
   color: #fff;
   display: flex;
-  box-sizing: border-box;
+  width: 100%;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  overflow: hidden;
   border: 7px solid #fff;
+  position: relative;
 }
 
 .wrapper-prompts-title {
@@ -67,7 +70,7 @@
     padding:2%;
     text-align: center;
   }
-  
+
   .wrapperPrompts h2,  .wrapperPrompts input, .wrapperPrompts p {
       margin: 1%;
       padding:2%;

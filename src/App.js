@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import Password from "./password/password.js";
 import Dashboard from "./dashboard/dashboard.js";
-import {
-  Switch,
-  Route,
-  withRouter,
-  Redirect
-} from "react-router-dom";
+import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 import {
   GET_CARDS_FROM_CATEGORY,
   SET_HAND,
@@ -50,9 +45,7 @@ class App extends Component {
   }
 
   async getCardsFromDatabase() {
-    console.log("Fetching cards from database...");
     const allCards = await getAllCards();
-    console.log(allCards)
     this.props.onUpdateCards(Categories.FORM, allCards.FORMS);
     this.props.onUpdateCards(Categories.MEDIUM, allCards.MEDIUMS);
     this.props.onUpdateCards(Categories.PRINCIPLES, allCards.PRINCIPLES);
@@ -109,7 +102,7 @@ class App extends Component {
     const isValid = await validatePassword(this.state.password);
     if (isValid) {
       // Cookie expires in 14 days
-      Cookies.set('auth', this.state.password, {expires: 14})
+      Cookies.set("auth", this.state.password, { expires: 14 });
       this.props.setAuth(true);
       this.props.history.push("about");
       this.getCards();
@@ -133,27 +126,34 @@ class App extends Component {
     if (auth === null) {
       return (
         <Switch>
-          <Route path="/" render={routeProps => <Loading {...routeProps} />}/>
+          <Route
+            path="/"
+            render={(routeProps) => <Loading {...routeProps} />}
+          />
         </Switch>
-      )
+      );
     } else if (auth) {
-      return <Dashboard/>
+      return <Dashboard />;
     } else {
       return (
         <Switch>
-          <Route exact path="/" render={routeProps => {
-            return (
-              <Password
-                {...routeProps}
-                handleChange={this.handleChange}
-                handlePassword={this.handlePassword}
-                error={this.state.error}
-              />
-            )
-          }} />
+          <Route
+            exact
+            path="/"
+            render={(routeProps) => {
+              return (
+                <Password
+                  {...routeProps}
+                  handleChange={this.handleChange}
+                  handlePassword={this.handlePassword}
+                  error={this.state.error}
+                />
+              );
+            }}
+          />
           <Route path="/" render={() => <Redirect to="/" />} />
         </Switch>
-      )
+      );
     }
   }
 }

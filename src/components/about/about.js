@@ -1,12 +1,16 @@
 import React from "react";
 import "./about.css";
 import Authenticator from '../Authenticator/Authenticator'
+import BurgerButton from "../displaycategories/burger.js";
 
 import { Link } from "react-router-dom";
 
 function About(props) {
   return (
     <div className="wrapperAbout">
+      <div className="burger-button-wrapper">
+        <BurgerButton />
+      </div>
       <h1 className="wrapperAbout-title">About</h1>
       <div className="exposition-label">
         The Black School Process Cards are a tarot-inspired interactive tool for
@@ -36,17 +40,17 @@ function About(props) {
         FORM: how it looks
         <br></br>
         THEME: to stimulate further creative thinking */}
-        PRINCIPLE: 
+        PRINCIPLE:
         <br></br>
-        TACTIC: 
+        TACTIC:
         <br></br>
-        QUESTION: 
+        QUESTION:
         <br></br>
-        MEDIUM: 
+        MEDIUM:
         <br></br>
-        FORM: 
+        FORM:
         <br></br>
-        THEME: 
+        THEME:
       </div>
       <div className="heading-body">
       Goals and issues

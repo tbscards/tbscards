@@ -8,8 +8,10 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  overflow: hidden;
   text-align: left;
   border: 7px solid #fff;
+  position: relative;
 }
 
 .wrapperAbout h3,

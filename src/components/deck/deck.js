@@ -61,11 +61,12 @@ const Deck = (props) => {
     history.push("/hand");
   };
 
-  // Map data into components
   const tar = cards.map((el) => {
     const selected = props.hand.some((ha) => {
       return ha.id === el.id;
     });
+
+    //Match Forms Names with Images
 
     return (
       <Card

@@ -31,7 +31,8 @@
 .card-hand-content {
   height: 100%;
   width: 100%;
-  padding: 7%;
+  
+  padding: 15% 10% 5% 10%;
   position: absolute;
 }
 
@@ -43,24 +44,34 @@
 }
 
 .card-hand-category {
-  text-align: center;
+  text-align: left;
   font-family: "value";
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
-  color: gray;
-  margin-bottom: 50px;
+  color: #C2A451;
+  /* margin-bottom: 50px; */
+}
+
+.card-hand-inframe{
+  margin-left: 24px;
+  margin-right: 24px;
 }
 
 .card-hand-title {
-  text-align: center;
-  font-size: 40px;
+  font-size: 32px;
+  margin-top: 5px;
+  margin-bottom:15px;
+  text-align: left;
+  color: #C2A451;
 }
 
 .card-hand-body {
-  font-family: "value";
+  font-family: "value-bold";
+  font-weight: 800;
+  font-size: 14px;
   height: fit-content;
-  position: absolute;
-  top: 40%;
+  margin-top: 10px;
+  color: #C2A451;
 }
 
 ._theme {
@@ -91,12 +102,12 @@
   .card-hand {
     width: 250px;
   }
-
+/* 
   .card-hand-category {
-    margin-bottom: 25px;
+    margin-bottom: 0px;
   }
 
   .card-hand-title {
-    font-size: 36px;
-  }
+    font-size: 32px;
+  } */
 }
