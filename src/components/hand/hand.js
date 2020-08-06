@@ -22,7 +22,7 @@ const Hand = (props) => {
       text += encodeURIComponent("Title: " + el.title) + " %0D%0A";
       text += encodeURIComponent("Category: " + el.category) + " %0D%0A";
       if (el.content && el.content.length > 0)
-        text += encodeURIComponent("Body: " + el.content) + " %0D%0A";
+        text += encodeURIComponent("Definition: " + el.content) + " %0D%0A";
       text += "%0D%0A";
     });
     return text;
