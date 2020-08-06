@@ -31,7 +31,8 @@
 .card-hand-content {
   height: 100%;
   width: 100%;
-  padding: 7%;
+  
+  padding: 15% 10% 5% 10%;
   position: absolute;
 }
 
@@ -43,11 +44,11 @@
 }
 
 .card-hand-category {
-  text-align: center;
+  text-align: left;
   font-family: "value";
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
-  color: gray;
+  color: #C2A451;
   /* margin-bottom: 50px; */
 }
 
@@ -59,15 +60,18 @@
 .card-hand-title {
   font-size: 32px;
   margin-top: 5px;
-  text-align: center;
+  margin-bottom:15px;
+  text-align: left;
+  color: #C2A451;
 }
 
 .card-hand-body {
-  font-family: "value";
+  font-family: "value-bold";
   font-weight: 800;
-  font-size: 12px;
+  font-size: 14px;
   height: fit-content;
   margin-top: 10px;
+  color: #C2A451;
 }
 
 ._theme {
