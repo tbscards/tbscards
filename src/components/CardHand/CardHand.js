@@ -43,10 +43,6 @@ const pickForm = (title) => {
       return Organic;
     case "Repetition/ Pattern/ Rhythm":
       return Repetition;
-    case "Organic":
-      return Organic;
-    case "Repetition/ Pattern/ Rhythm":
-      return Repetition;
     case "Scale":
       return Scale;
     case "Symbolic":
