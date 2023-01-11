@@ -40,7 +40,7 @@ const reducer = (state = initialState, action) => {
     case GET_CARDS_FROM_HAND:
       let newArray = state.hand.slice();
       let isInHand = false;
-      newArray.map((card) => {
+      newArray.forEach((card) => {
         if (card && card.id === action.card.id) {
           isInHand = true;
         }
